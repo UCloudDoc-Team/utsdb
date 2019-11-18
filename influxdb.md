@@ -33,4 +33,19 @@ InfluxDB数据结构的一部分，描述了InfluxDB保存数据的长短(durati
 
 当你创建一个database的时候，InfluxDB会自动创建一个叫做autogen的retention policy，其duration为永远，replication factor为1，shard group的duration设为的七天。
 
+## series
+InfluxDB数据结构的集合，一个特定的series由measurement，tag set和retention policy组成。
 
+## tag
+InfluxDB数据结构中的键值对，tags在InfluxDB的数据中是可选的，但是它们可用于存储常用的metadata; tags会被索引，因此tag上的查询是很高效的。
+
+## tag key
+组成tag的键值对中的键部分，tag key是字符串，存在metadata中。
+
+## tag set
+数据点上tag key和tag value的集合。
+
+## tag value
+组成tag的键值对中的值部分，tag value是字符串，存在metadata中。
+
+更多专业术语，请查看https://docs.influxdata.com/influxdb/v1.7/
