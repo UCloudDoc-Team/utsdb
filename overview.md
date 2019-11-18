@@ -7,9 +7,10 @@
 * 快速上手
     * [创建时序数据库实例](database/utsdb/quick/create)
     * [登录访问InfluxDB](database/utsdb/quick/login)
-* [实例管理](database/utsdb/guide/instance)
+* 操作指南
+    * [实例管理](database/utsdb/guide/instance)
+    * [使用指南](database/utsdb/guide/use)
 * [InfluxDB专业术语](database/utsdb/influxdb)
 * [应用行业](database/utsdb/application)
-* [使用指南](database/utsdb/use)
 * [产品价格](database/utsdb/price)
 * [FAQs](database/utsdb/faqs)
