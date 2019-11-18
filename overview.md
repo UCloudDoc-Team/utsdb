@@ -8,6 +8,7 @@
     * [创建时序数据库实例](database/utsdb/quick/create)
     * [登录访问InfluxDB](database/utsdb/quick/login)
 * [实例管理](database/utsdb/guide/instance)
+* [InfluxDB专业术语](database/utsdb/influxdb)
 * [应用行业](database/utsdb/application)
 * [使用指南](database/utsdb/use)
 * [产品价格](database/utsdb/price)
