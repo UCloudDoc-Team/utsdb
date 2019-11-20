@@ -46,7 +46,7 @@ POST的请求体我们称之为'Line Protocol'，包含了你希望存储的时�
 
 要想同时发送多个数据点到多个series(在InfluxDB中measurement加tags组成了一个series)，可以用新的行来分开这些数据点。这种批量发送的方式可以获得更高的性能。
 
-下面的例子就是写了三个数据点到'mydb'数据库中。第一个点所属series的measurement为'cpu_load_short'，tag是'host=server02'，timestamp是server本地的时间戳；第二个点同样是measurement为'cpu_load_short'，但是tag为'host=server02,region=us-west',且有明确timestamp为'1422568543702900257'的series；第三个数据点和第二个的timestamp是一样的，但是series不一样，其measurement为`cpu_load_short`，tag为'direction=in,host=server01,region=us-west'。
+下面的例子就是写了三个数据点到'mydb'数据库中。第一个点所属series的measurement为'cpu_load_short'，tag是'host=server02'，timestamp是server本地的时间戳；第二个点同样是measurement为'cpu_load_short'，但是tag为'host=server02,region=us-west',且有明确timestamp为'1422568543702900257'的series；第三个数据点和第二个的timestamp是一样的，但是series不一样，其measurement为'cpu_load_short'，tag为'direction=in,host=server01,region=us-west'。
 
 ```
 curl -i -XPOST 'http://10.10.5.129:8086/write?db=mydb' --data-binary 'cpu,host=server02 value=0.67
