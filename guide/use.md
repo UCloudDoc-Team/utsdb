@@ -12,4 +12,6 @@
 
 要使用CLI，首先在终端启动`influx`。成功连接到InfluxDB 实例后，您会看到以下输出：
 
-![image-20191120144849738](/Users/haolin/Library/Application Support/typora-user-images/image-20191120144849738.png)
+![image-influxdb0001](/utsdb/images/influxdb009.png)
+
+
