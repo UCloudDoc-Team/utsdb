@@ -5,9 +5,9 @@
     * [产品优势](database/utsdb/product/superiority)
   * 快速上手
     * [创建时序数据库实例](database/utsdb/quick/create)
-    * [访问InfluxDB](database/utsdb/quick/login)
+    * [实例管理](database/utsdb/quick/instance)
   * 操作指南
-    * [实例管理](database/utsdb/guide/instance)
+    * [客户端工具](database/utsdb/guide/login)
     * [使用指南](database/utsdb/guide/use)
   * [InfluxDB专业术语](database/utsdb/influxdb)
   * [应用行业](database/utsdb/application)
