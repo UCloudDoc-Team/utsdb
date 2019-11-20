@@ -1,4 +1,6 @@
-# 命令行
+# InfluxDB使用指南
+
+## 命令行
 
 命令行界面（influx）是与HTTP API进行交互的shell。可以使用influx写入数据、查询数据，及用不同的格式查看查询结果。
 
@@ -16,11 +18,11 @@ InfluxDB shell version: XXX
 Enter an InfluxQL query  
 ```
 
-# HTTP
+##  HTTP
 
 本文将介绍使用HTTP接口如何读写数据；本文中以控制台创建的时序数据实例（ip为10.10.5.129）为例。
 
-## 写入数据
+### 写入数据
 
 有很多可以向InfluxDB写数据的方式，包括命令行、客户端还有一些像Graphite有一样数据格式的插件。
 
@@ -76,7 +78,7 @@ REST的确是很方便的，而InfluxDB也只提供了三个API，这使得Influ
 
 
 
-## 查询数据
+### 查询数据
 
 #### 使用HTTP接口查询数据
 
