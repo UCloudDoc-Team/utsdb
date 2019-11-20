@@ -70,7 +70,7 @@ cpu,host=server02,region=us-west value=0.55 1422568543702900257
 cpu,direction=in,host=server01,region=us-west value=2.0 1422568543702900257'
 ```
 
-![image](/images/influx03.png)
+![image](/images/influx04.png)
 
 #### 无模式设计
 
