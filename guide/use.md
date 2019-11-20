@@ -1,10 +1,10 @@
 # 命令行
 
-命令行界面（influx）是与HTTP API进行交互的shell。可以使用influx写入数据（手动地或者从文件中）、交互式地查询数据和以不同的格式查看查询结果。
+命令行界面（influx）是与HTTP API进行交互的shell。可以使用influx写入数据、查询数据，及用不同的格式查看查询结果。
 
 ### 下载CLI
 
-进入到下载[页面](https://portal.influxdata.com/downloads/)
+进入到[页面下载](https://portal.influxdata.com/downloads/)
 
 ### 启动influx
 
@@ -26,11 +26,11 @@ Enter an InfluxQL query
 
 #### 创建数据库
 
-请使用ucloud 控制台创建数据库，具体操作见快速上手中的[实例管理](/quick/instance.md)。
+请使用UCloud 控制台创建数据库，具体操作见快速上手中的[实例管理](/quick/instance.md)。
 
 #### 使用HTTP接口写数据
 
-通过HTTP接口POST数据到/write路径是我们往InfluxDB写数据的主要方式。下面的例子写了一条数据到'mydb'数据库。这条数据的组成部分是measurement为'cpu_load_short'，tag的key为host和region，对应tag的value是'server01'和'us-west'，field的key是'value'，对应的数值为'0.64'，而时间戳是'1434055562000000000'。
+通过HTTP接口POST数据到/write路径是我们往InfluxDB写数据的主要方式。下面的例子写了一条数据到mydb数据库。这条数据的组成部分是measurement为'cpu_load_short'，tag的key为host和region，对应tag的value是'server01'和'us-west'，field的key是'value'，对应的数值为'0.64'，而时间戳是'1434055562000000000'。
 
 ```
 curl -i -XPOST 'http://10.10.5.129:8086/write?db=mydb' --data-binary 'cpu,host=server01,region=us-west value=0.64 1434055562000000000'
@@ -71,8 +71,8 @@ REST的确是很方便的，而InfluxDB也只提供了三个API，这使得Influ
 #### HTTP返回值概要
 
 - 2xx：如果你写了数据后收到'HTTP 204 No Content'，说明写入成功。
-- 4xx：表示InfluxDB无法鉴别请求发送的是什么。
-- 5xx：系统过载或是应用受损。
+- 4xx：表示InfluxDB无法处理该请求；无法鉴别请求发送的是什么，可能是查询的语法不正确引起的。
+- 5xx：无法处理该请求，可能是系统过载或是应用受损。
 
 
 
@@ -80,7 +80,7 @@ REST的确是很方便的，而InfluxDB也只提供了三个API，这使得Influ
 
 #### 使用HTTP接口查询数据
 
-HTTP接口是InfluxDB查询数据的主要方式。通过发送一个'GET'请求到'/query'路径，并设置URL的'db'参数为目标数据库，设置URL参数'q'为查询语句。例：
+HTTP接口是InfluxDB查询数据的主要方式。通过发送一个GET请求到'/query'路径，并设置URL的'db'参数为目标数据库，设置URL参数'q'为查询语句。例：
 
 ```
 curl -G 'http://10.10.5.129:8086/query?pretty=true' --data-urlencode "db=influxdbmydb" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west';SELECT count(\"value\") FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
@@ -105,7 +105,7 @@ InfluxDB返回一个json值，你查询的结果在`result`列表中，如果有
 
 #### 多个查询
 
-在一次API调用中发送多个InfluxDB的查询语句，可以简单地使用分号分隔每个查询
+在一次API调用中发送多个InfluxDB的查询语句，可以简单地使用分号分隔每个查询。
 
 #### 查询数据时的其他可选参数
 
@@ -116,4 +116,4 @@ InfluxDB返回一个json值，你查询的结果在`result`列表中，如果有
 ```
 curl -G 'http://10.10.5.129:8086/query' --data-urlencode "db=influxdbmydb" --data-urlencode "epoch=s" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
 ```
-
+更多使用指南可参考[InfluxDB官方操作文档](https://docs.influxdata.com/influxdb/v1.7/)
