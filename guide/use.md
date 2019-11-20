@@ -79,7 +79,7 @@ REST的确是很方便的，而InfluxDB也只提供了三个API，这使得Influ
 
 #### 使用HTTP接口查询数据
 
-HTTP接口是InfluxDB查询数据的主要方式。通过发送一个`GET`请求到`/query`路径，并设置URL的`db`参数为目标数据库，设置URL参数`q`为查询语句。下面的例子是查询在[写数据](https://jasper-zhang1.gitbooks.io/influxdb/content/Guide/writing_data.html)里写入的数据点。
+HTTP接口是InfluxDB查询数据的主要方式。通过发送一个`GET`请求到`/query`路径，并设置URL的`db`参数为目标数据库，设置URL参数`q`为查询语句。例：
 
 ```
 curl -G 'http://10.10.5.129:8086/query?pretty=true' --data-urlencode "db=influxdbmydb" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west';SELECT count(\"value\") FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
