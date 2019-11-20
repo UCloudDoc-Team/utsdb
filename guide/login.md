@@ -28,4 +28,4 @@
 
 - Python
 
-[Python client for InfluxDB](https://help.aliyun.com/document_detail/113116.html?spm=a2c4g.11186623.6.730.64241f3aRmo6j2)
+[Python client for InfluxDB](https://github.com/influxdata/influxdb-python?spm=a2c4g.11186623.2.45.3766265dVicNxx)
