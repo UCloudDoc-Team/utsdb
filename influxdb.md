@@ -31,13 +31,13 @@ InfluxDB数据结构的一部分由series中的的一堆field组成。 每个点
 ## retention policy(RP)
 InfluxDB数据结构的一部分，描述了InfluxDB保存数据的长短(duration)，数据存在集群里面的副本数(replication factor)，以及shard group的时间范围(shard group duration)。RPs在每个database里面是唯一的，连同measurement和tag set定义一个series。
 
-当你创建一个database的时候，InfluxDB会自动创建一个叫做autogen的retention policy，其duration为永远，replication factor为1，shard group的duration设为的七天。
+当你创建一个database的时候，InfluxDB会自动创建一个叫做autogen的保留策略（retention policy），默认为永久有效.
 
 ## series
 InfluxDB数据结构的集合，一个特定的series由measurement，tag set和retention policy组成。
 
 ## tag
-InfluxDB数据结构中的键值对，tags在InfluxDB的数据中是可选的，但是它们可用于存储常用的metadata; tags会被索引，因此tag上的查询是很高效的。
+InfluxDB数据结构中的键值对，tags在InfluxDB的数据中是可选的，但是它们可用于存储常用的metadata; tags会被索引，因此tag上的查询很高效。
 
 ## tag key
 组成tag的键值对中的键部分，tag key是字符串，存在metadata中。
@@ -48,4 +48,4 @@ InfluxDB数据结构中的键值对，tags在InfluxDB的数据中是可选的，
 ## tag value
 组成tag的键值对中的值部分，tag value是字符串，存在metadata中。
 
-更多专业术语，请查看https://docs.influxdata.com/influxdb/v1.7/
+更多专业术语，请查看[InfluxDB官方文档](https://docs.influxdata.com/influxdb/v1.7/)
