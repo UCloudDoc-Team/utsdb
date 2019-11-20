@@ -88,7 +88,7 @@ HTTP接口是InfluxDB查询数据的主要方式。通过发送一个GET请求�
 curl -G 'http://10.10.5.129:8086/query?pretty=true' --data-urlencode "db=influxdbmydb" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west';SELECT count(\"value\") FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
 ```
 
-InfluxDB返回一个json值，你查询的结果在`result`列表中，如果有错误发送，InfluxDB会在'error'这个key里解释错误发生的原因。
+InfluxDB返回一个json值，你查询的结果在'result'列表中，如果有错误发送，InfluxDB会在'error'这个key里解释错误发生的原因。
 
 ```
 {
