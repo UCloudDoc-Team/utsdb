@@ -6,18 +6,19 @@
 
 进入到下载[页面](https://portal.influxdata.com/downloads/)
 
-
-
 ### 启动influx
 
-要使用CLI，首先在终端启动influx。成功连接到InfluxDB 实例后，您会看到以下输出：
-
-![image](/images/influxdb0001.png)
-
+要使用CLI，首先在终端启动influx，可通过ip成功连接到InfluxDB实例：
+```
+[root@10-10-XXX-XXX]#./influx -host 10.10.5.129 
+Connected to http://10.10.5.129:8086 version XXX
+InfluxDB shell version: XXX
+Enter an InfluxQL query  
+```
 
 # HTTP
 
-本文将介绍使用HTTP接口如何读写数据。
+本文将介绍使用HTTP接口如何读写数据；本文中以控制台创建的时序数据实例（ip为10.10.5.129）为例。
 
 ## 写入数据
 
@@ -32,7 +33,7 @@
 通过HTTP接口POST数据到/write路径是我们往InfluxDB写数据的主要方式。下面的例子写了一条数据到'mydb'数据库。这条数据的组成部分是measurement为'cpu_load_short'，tag的key为host和region，对应tag的value是'server01'和'us-west'，field的key是'value'，对应的数值为'0.64'，而时间戳是'1434055562000000000'。
 
 ```
-curl -i -XPOST 'http://10.10.111.111:8086/write?db=mydb' --data-binary 'cpu,host=server01,region=us-west value=0.64 1434055562000000000'
+curl -i -XPOST 'http://10.10.5.129:8086/write?db=mydb' --data-binary 'cpu,host=server01,region=us-west value=0.64 1434055562000000000'
 ```
 
 ![image](/images/influxdb0002.png)
