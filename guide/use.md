@@ -1,6 +1,6 @@
 # 命令行
 
-命令行界面（`influx`）是与HTTP API进行交互的shell。可以使用`influx`写入数据（手动地或者从文件中）、交互式地查询数据和以不同的格式查看查询结果。
+命令行界面（influx）是与HTTP API进行交互的shell。可以使用influx写入数据（手动地或者从文件中）、交互式地查询数据和以不同的格式查看查询结果。
 
 ### 下载CLI
 
@@ -10,7 +10,7 @@
 
 ### 启动influx
 
-要使用CLI，首先在终端启动`influx`。成功连接到InfluxDB 实例后，您会看到以下输出：
+要使用CLI，首先在终端启动influx。成功连接到InfluxDB 实例后，您会看到以下输出：
 
 ![image](/images/influxdb0001.png)
 
@@ -21,15 +21,15 @@
 
 ## 写入数据
 
-有很多可以向InfluxDB写数据的方式，包括命令行、客户端还有一些像`Graphite`有一样数据格式的插件。
+有很多可以向InfluxDB写数据的方式，包括命令行、客户端还有一些像Graphite有一样数据格式的插件。
 
 #### 创建数据库
 
-请使用ucloud 控制台创建数据库，见快速上手[实例管理](/quick/instance.md)
+请使用ucloud 控制台创建数据库，具体操作见快速上手中的[实例管理](/quick/instance.md)。
 
 #### 使用HTTP接口写数据
 
-通过HTTP接口`POST`数据到`/write`路径是我们往InfluxDB写数据的主要方式。下面的例子写了一条数据到`mydb`数据库。这条数据的组成部分是measurement为`cpu_load_short`，tag的key为host和region，对应tag的value是`server01`和`us-west`，field的key是`value`，对应的数值为`0.64`，而时间戳是`1434055562000000000`。
+通过HTTP接口POST数据到/write路径是我们往InfluxDB写数据的主要方式。下面的例子写了一条数据到'mydb'数据库。这条数据的组成部分是measurement为'cpu_load_short'，tag的key为host和region，对应tag的value是'server01'和'us-west'，field的key是'value'，对应的数值为'0.64'，而时间戳是'1434055562000000000'。
 
 ```
 curl -i -XPOST 'http://10.10.111.111:8086/write?db=mydb' --data-binary 'cpu,host=server01,region=us-west value=0.64 1434055562000000000'
@@ -113,6 +113,6 @@ InfluxDB返回一个json值，你查询的结果在`result`列表中，如果有
 在InfluxDB中的所有数据都是存的UTC时间，时间戳默认返回RFC3339格式的纳米级的UTC时间，例如`2015-08-04T19:05:14.318570484Z`，如果你想要返回Unix格式的时间，可以在请求参数里设置`epoch`参数，其中epoch可以是`[h,m,s,ms,u,ns]`之一。例如返回一个秒级的epoch：
 
 ```
-curl -G 'http://localhost:8086/query' --data-urlencode "db=influxdbmydb" --data-urlencode "epoch=s" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
+curl -G 'http://10.10.111.111:8086/query' --data-urlencode "db=influxdbmydb" --data-urlencode "epoch=s" --data-urlencode "q=SELECT \"value\" FROM \"cpu_load_short\" WHERE \"region\"='us-west'"
 ```
 
