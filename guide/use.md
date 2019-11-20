@@ -18,6 +18,8 @@ InfluxDB shell version: XXX
 Enter an InfluxQL query  
 ```
 
+![image](/images/influxdb0001.png)
+
 ##  HTTP
 
 本文将介绍使用HTTP接口如何读写数据；本文中以控制台创建的时序数据实例（ip为10.10.5.129）为例。
