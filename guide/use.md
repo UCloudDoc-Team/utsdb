@@ -18,7 +18,7 @@ InfluxDB shell version: XXX
 Enter an InfluxQL query  
 ```
 
-![image](/images/influxdb0001.png)
+![image](/images/influx01.png)
 
 ##  HTTP
 
@@ -40,7 +40,7 @@ Enter an InfluxQL query
 curl -i -XPOST 'http://10.10.5.129:8086/write?db=mydb' --data-binary 'cpu,host=server01,region=us-west value=0.64 1434055562000000000'
 ```
 
-![image](/images/influxdb0002.png)
+![image](/images/influx02.png)
 
 当写入这条数据点的时候，你必须明确存在一个数据库对应名字是'db'参数的值。如果你没有通过'rp'参数设置retention policy的话，那么这个数据会写到'db'默认的retention policy中。
 
@@ -70,7 +70,7 @@ cpu,host=server02,region=us-west value=0.55 1422568543702900257
 cpu,direction=in,host=server01,region=us-west value=2.0 1422568543702900257'
 ```
 
-![image](/images/influxdb0002.png)
+![image](/images/influx03.png)
 
 #### 无模式设计
 
