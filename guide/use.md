@@ -42,7 +42,13 @@ curl -i -XPOST 'http://10.10.5.129:8086/write?db=mydb' --data-binary 'cpu,host=s
 
 当写入这条数据点的时候，你必须明确存在一个数据库对应名字是'db'参数的值。如果你没有通过'rp'参数设置retention policy的话，那么这个数据会写到'db'默认的retention policy中。
 
-称POST的请求体为'Line Protocol'，包含了用户希望存储的时间序列数据。其组成部分有measurement，tags，fields和timestamp。其中，measurement是InfluxDB必须的，tags是可选的，但是对于大部分数据都会包含tags用来区分数据的来源，让查询变得容易和高效；tag的key和value都必须是字符串；fields的key也是必须的，且是字符串，默认情况下field的value是float类型。timestamp在这个请求行的最后，是一个纳秒级的Unix time，且是可选的，如果不传，InfluxDB会使用服务器的本地的纳米级的timestamp来作为数据的时间戳，注意无论哪种方式，在InfluxDB中的timestamp只能是UTC时间。
+称POST的请求体为'Line Protocol'，包含了用户希望存储的时间序列数据。其组成部分有measurement，tags，fields和timestamp。其中，
+
+measurement是InfluxDB必须的，tags是可选的，但是对于大部分数据都会包含tags用来区分数据的来源，让查询变得容易和高效；tag的key和value都必须是字符串；
+
+fields的key也是必须的，且是字符串，默认情况下field的value是float类型。
+
+timestamp在这个请求行的最后，是一个纳秒级的Unix time，且是可选的，如果不传，InfluxDB会使用服务器的本地的纳米级的timestamp来作为数据的时间戳，注意无论哪种方式，在InfluxDB中的timestamp只能是UTC时间。
 
 #### 同时写入多个点
 
