@@ -113,7 +113,25 @@ InfluxDB返回一个json值，你查询的结果在'result'列表中，如果有
 
 在一次调用中发送多个InfluxDB的查询语句，可以简单地使用分号分隔每个查询。
 
-#### 查询数据时的其他可选参数
+
+### 连续查询（CQs）
+
+连续查询(Continuous Queries) 是influxdb内建的可以定期执行指定Query的功能。它可以用来定期将原始数据聚合、筛选后，输出到指定的表中。
+
+#### 自动采样数据
+
+```
+CREATE CONTINUOUS QUERY "cq_basic" ON "iotest" 
+BEGIN  
+
+  SELECT mean("product_value") INTO "product_value_mean" FROM "mqtt_online_count" GROUP BY time(1h) 
+END 
+```
+cq_basic每小时执行一次，从mqtt_online_count中聚合查询product_value的值，并将结果插入product_value_mean中。
+
+效果:每小时自动做聚合并将结果插入新表，提高用户查询效率
+
+### 查询数据时的其他可选参数
 
 #### 时间戳格式
 
