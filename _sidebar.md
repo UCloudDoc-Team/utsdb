@@ -5,6 +5,7 @@
     * [什么是时序数据库](database/utsdb/product/concepts)
     * [主要概念](database/utsdb/product/Terminology)
     * [产品优势](database/utsdb/product/superiority)
+    * [UTSDB-InfluxDB架构](database/utsdb/product/architecture)
 * 快速上手
     * [创建时序数据库实例](database/utsdb/quick/create)
     * [实例管理](database/utsdb/quick/instance)
