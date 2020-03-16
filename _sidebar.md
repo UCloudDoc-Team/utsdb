@@ -11,7 +11,7 @@
     * [实例管理](database/utsdb/quick/instance)
 * 操作指南
     * [客户端工具](database/utsdb/guide/login)
-    * [使用指南](database/utsdb/guide/use)
+    * [InfluxDB使用指南](database/utsdb/guide/use)
 * [InfluxDB专业术语](database/utsdb/influxdb)
 * [应用行业](database/utsdb/application)
 * [产品价格](database/utsdb/price)
