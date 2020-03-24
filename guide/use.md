@@ -30,7 +30,7 @@ Enter an InfluxQL query
 
 #### 创建数据库
 
-请使用UCloud 控制台创建数据库，具体操作见快速上手中的[实例管理](/database/utsdb/quick/instance.md)。
+请使用UCloud 控制台创建数据库，具体操作见快速上手中的[实例管理](utsdb/quick/instance.md)。
 
 #### 使用HTTP接口写数据
 
