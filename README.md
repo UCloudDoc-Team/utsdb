@@ -1,7 +1,5 @@
 # utsdb
 
-
-
 * 产品简介
     * [什么是时序数据库](/utsdb/product/concepts)
     * [主要概念](/utsdb/product/Terminology)
