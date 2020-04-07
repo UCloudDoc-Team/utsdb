@@ -54,4 +54,4 @@
 
 具体计费说明请参考“购买和计费”文档。
 
-![image](/images/influxdb003.png)
+![image](/images/influxdb2020040702.png)
