@@ -1,4 +1,3 @@
-<div class="sidebar_title"> 时序数据库 UTSDB</div>
 
 * [概览](/utsdb/README)
 * 产品简介
