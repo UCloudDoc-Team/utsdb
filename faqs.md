@@ -12,7 +12,7 @@ UInfluxdb是“仅内网访问且按账户隔离”的，因此仅有同一账�
 
 ### UInfluxdb的兼容性如何？
 
-目前UInfluxdb兼容开源Influxdb1.7以上的语法。
+目前UInfluxdb兼容开源Influxdb1.8的语法。
 
 ### UInfluxdb的存储容量如何？
 
